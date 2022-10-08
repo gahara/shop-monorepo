@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "apigateway"
+name = "auth"
 version = "0.1.0"
 description = ""
 authors = ["gahara <madinikus@gmail.com>"]
@@ -15,8 +15,10 @@ MarkupSafe = "2.1.1"
 typing_extensions = "4.4.0"
 Werkzeug = "2.2.2"
 zipp = "3.8.1"
-requests = "2.24.0"
 common = {path = "../common"}
+flask-sqlalchemy = "^3.0.0"
+Flask-Migrate = "^3.1.0"
+PyJWT = "2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
