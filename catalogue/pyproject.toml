@@ -16,6 +16,8 @@ typing_extensions = "4.4.0"
 Werkzeug = "2.2.2"
 zipp = "3.8.1"
 common = {path = "../common"}
+flask-sqlalchemy = "^3.0.0"
+Flask-Migrate = "^3.1.0"
 
 [build-system]
 requires = ["poetry-core"]

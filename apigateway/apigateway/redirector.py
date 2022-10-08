@@ -2,7 +2,6 @@ import requests
 
 
 def redirect(request, host):
-    print('URL!!!!', request.url)
     resp = requests.request(
         method=request.method,
         url=request.url.replace(request.host_url, host),
