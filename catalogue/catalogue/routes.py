@@ -27,7 +27,7 @@ def item_info(itemid):
         raise NotFound
 
     result = items[itemid]
-    result["uri"] = f"/movies/{itemid}"
+    result["uri"] = f"/items/{itemid}"
 
     return nice_json(result)
 
