@@ -1,4 +1,4 @@
-from common.utils import root_dir, nice_json
+from common.utils import  nice_json
 from flask import Flask
 from werkzeug.exceptions import NotFound
 import json
@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-with open(f"{root_dir()}/temp/items.json", "r") as f:
+with open("items.json", "r") as f:
     items = json.load(f)
 
 
