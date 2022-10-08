@@ -2,9 +2,7 @@ import uuid
 import jwt
 import datetime
 from flask import jsonify, make_response, request
-from werkzeug.exceptions import NotFound
 from werkzeug.security import generate_password_hash, check_password_hash
-import json
 from models import User
 from auth import app, db
 

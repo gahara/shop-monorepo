@@ -1,8 +1,6 @@
 
-from werkzeug.exceptions import NotFound
-import json
+from flask import jsonify
 
-from common.utils import nice_json
 from catalogue import app
 from models import Item
 
@@ -21,7 +19,7 @@ from models import Item
 
 @app.route("/", methods=['GET'])
 def index():
-    return nice_json({
+    return jsonify({
         "uri": "/",
         "subresource_uris": {
             "items": "/items",
@@ -36,14 +34,14 @@ def item_info(itemid):
     result = Item.query.get_or_404(itemid).to_dict()
     result["uri"] = f"/items/{itemid}"
 
-    return nice_json(result)
+    return jsonify(result)
 
 
 @app.route("/items/", methods=['GET'])
 def movie_record():
     result_raw = Item.query.all()
     result = [item.to_dict() for item in result_raw]
-    return nice_json(result)
+    return jsonify(result)
 
 
 if __name__ == "__main__":

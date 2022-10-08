@@ -12,7 +12,13 @@
 					"name": "items",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-tokens",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIzOGM4YmViMy01ZTYwLTQ0MzUtYjgwOS0xY2NmMGVjZmMzMzQiLCJleHAiOjE2NjUyNTczNTZ9.JgAJo1RisRET6kBqno2OH8iX4I8GNWi4OtuqW91haSw",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://127.0.0.1:5000/items/",
 							"protocol": "http",

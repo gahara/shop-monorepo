@@ -2,6 +2,12 @@ import os
 import json
 from flask import make_response
 
+STATUS_CODES = {
+    'OK': 200,
+    'UNAUTHORIZED': 401,
+    'FORBIDDEN': 403,
+    'NOT_FOUND': 404
+}
 
 def root_dir():
     """ Returns root director for this project """
