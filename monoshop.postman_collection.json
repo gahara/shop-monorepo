@@ -15,7 +15,7 @@
 						"header": [
 							{
 								"key": "x-access-tokens",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIzOGM4YmViMy01ZTYwLTQ0MzUtYjgwOS0xY2NmMGVjZmMzMzQiLCJleHAiOjE2NjUyNTczNTZ9.JgAJo1RisRET6kBqno2OH8iX4I8GNWi4OtuqW91haSw",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIxZjExZDkzNS1hZjAzLTRhNjUtYTI3Ny0zMjMzZGUxNDYyNTQiLCJleHAiOjE2NjUzMDY0NzV9.CmW2ckFRnbMHwU63rng4STCphmcNhFhXmGx7TzIdeNI",
 								"type": "text"
 							}
 						],
@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Sultan\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"name\": \"lol\",\n    \"password\": \"kek\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +82,7 @@
 						"header": [
 							{
 								"key": "x-access-tokens",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIzOGM4YmViMy01ZTYwLTQ0MzUtYjgwOS0xY2NmMGVjZmMzMzQiLCJleHAiOjE2NjUyNTczNTZ9.JgAJo1RisRET6kBqno2OH8iX4I8GNWi4OtuqW91haSw",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIxZjExZDkzNS1hZjAzLTRhNjUtYTI3Ny0zMjMzZGUxNDYyNTQiLCJleHAiOjE2NjUzMDY0NzV9.CmW2ckFRnbMHwU63rng4STCphmcNhFhXmGx7TzIdeNI",
 								"type": "text"
 							}
 						],
@@ -112,12 +112,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123456",
+									"value": "kek",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "Sultan",
+									"value": "lol",
 									"type": "string"
 								}
 							]
@@ -161,7 +161,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5001/items",
+					"raw": "http://127.0.0.1:5001/items/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -171,7 +171,39 @@
 					],
 					"port": "5001",
 					"path": [
-						"items"
+						"items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"price\": 12,\n        \"rating\": 9,\n        \"title\": \"potato\",\n        \"amount\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/add-item",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"add-item"
 					]
 				}
 			},

@@ -1,4 +1,4 @@
-from redirector import redirect
+from .redirector import redirect
 from flask import Flask, request, Response, make_response
 import requests
 
@@ -36,7 +36,3 @@ def check_token():
 def items_proxy(path):
     response = redirect(request, ITEMS_PATH)
     return Response(response['content'], response['status_code'], response['headers'])
-
-
-if __name__ == "__main__":
-    app.run(port=5000, debug=True)

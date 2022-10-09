@@ -3,8 +3,8 @@ import jwt
 import datetime
 from flask import jsonify, make_response, request
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User
-from auth import app, db
+from .models import User
+from . import app, db
 
 
 #https://www.digitalocean.com/community/tutorials/how-to-use-flask-sqlalchemy-to-interact-with-databases-in-a-flask-application
@@ -72,7 +72,3 @@ def sign_in():
         return jsonify({'token': token})
 
     return make_response('could not verify', 401, {'Authentication': 'login required'})
-
-
-if __name__ == "__main__":
-    app.run(port=5003, debug=True)

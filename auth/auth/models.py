@@ -1,4 +1,4 @@
-from auth import db
+from . import db
 
 
 # https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database
