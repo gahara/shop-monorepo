@@ -1,19 +1,23 @@
 # shop-monorepo
 
-brew install poetry
+Структруа должна быть как в catelogue, auth и apigateway
+каждая папка - отдельный сервис со своим venv
+то есть открываешь каждую папку в отдельном окне, создаешь там venv через pycharm
 
-##for each microservice##
-see structure as in `catalogue`
+структура в итоге такая:
 
- - create poetry.toml with `poetry init`
- - fill in requirements
- - than in microservice's directory run `poetry install`
+shop-monorepo/
+  catalogue/ <- в этой папке запускаешь flask run, миграции там же
+     __init__.py
+     venv/
+     requirements
+     migrations
+     catalogue/
+       __init__.py
+       models.py
+       ...
 
- open each microservice in it's own window in ide so you can create a separate env for each of them
- to create env run `poetry shell`
+ устанавливаешь зависимости из requirements
 
- then run it via python
-
- keep in mind that each folder in shop-monorepo is a python package
-
-
+ запускаешь как flask run
+ параметры запуска конфигурируюется в .flaskenv
