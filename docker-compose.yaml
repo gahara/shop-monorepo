@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  auth_service:
+    build: ./auth
+    command: flask run --host 0.0.0.0
+    ports:
+      - "5003:5003"
+
+  catalogue_service:
+    build: ./catalogue
+    command: flask run --host 0.0.0.0
+    ports:
+      - "5001:5001"
+
+  api_gateway:
+    build: ./apigateway
+    command: flask run --host 0.0.0.0
+    ports:
+      - "5000:5000"
+    links:
+      - auth_service
+      - catalogue_service
+
+#      сюда же по аналогии добалвяешь другие сервисы, в links добавляешь когда из текущего
+#сервиса тебе в какой-то надо. когда ты из докера по ним ходишь, хочт будет как тут название сервиса, типа
+#auth_service и так далее. если руками отлаживаешь - то хост 127.0.0.1 как обычно пропиши в файле
+

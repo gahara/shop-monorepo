@@ -2,17 +2,17 @@ from .redirector import redirect
 from flask import Flask, request, Response, make_response
 import requests
 
-
-ITEMS_PATH = 'http://127.0.0.1:5001/'
+#ITEMS_PATH = 'http://127.0.0.1:5001/' - локально
+ITEMS_PATH = 'http://catalogue_service:5001/' #для docker-compose
 USERS_PATH = 'http://127.0.0.1:5003/'
 
 app = Flask(__name__)
 
 
-#выполняется перед КАЖДЫМ запросом. исключить запросы без авторизации
+# выполняется перед КАЖДЫМ запросом. исключить запросы без авторизации
 @app.before_request
 def check_token():
-    #сделать тут исключения для ручек, которым не нужна авторизация, наприме items
+    # сделать тут исключения для ручек, которым не нужна авторизация, наприме items
     '''
       if('/items/' in request.path):
         return
@@ -20,7 +20,8 @@ def check_token():
          тогда уже делаем то, что ниже
     '''
 
-    users_full_path = 'http://127.0.0.1:5003/user/token'
+    #для запуска локально сменить хост на 127.0.0.1
+    users_full_path = 'http://auth_service:5003/user/token'
     response = requests.request(
         method='GET',
         url=users_full_path,
@@ -28,7 +29,7 @@ def check_token():
         cookies=request.cookies,
         allow_redirects=False)
     if response.status_code != 200:
-        return make_response('check your authorization data',response.status_code , {'Authentication': 'invalid token'})
+        return make_response('check your authorization data', response.status_code, {'Authentication': 'invalid token'})
 
 
 @app.errorhandler(404)
